@@ -1,0 +1,9 @@
+<div class="card mb-3" appDraggable [dragData]="task" draggable="true">
+  <div class="card-body">
+    <h5 class="card-title">{{ task.title }}</h5>
+    <p class="card-text">{{ task.description }}</p>
+    <p class="card-text">Due Date: {{ task.dueDate | date }}</p>
+    <button class="btn btn-primary btn-sm" (click)="onUpdateTask()">Update</button>
+    <button class="btn btn-danger btn-sm" (click)="onDeleteTask()">Delete</button>
+  </div>
+</div>

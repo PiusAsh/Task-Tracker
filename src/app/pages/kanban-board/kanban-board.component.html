@@ -1,0 +1,32 @@
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col" appDropZone [zone]="0" (dropped)="onDrop($event)">
+      <h2 class="text-xl font-weight-bold mb-4">Open</h2>
+      <div *ngFor="let task of getTasksByStatus('Open')">
+        <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
+      </div>
+    </div>
+
+    <div class="col" appDropZone [zone]="1" (dropped)="onDrop($event)">
+      <h2 class="text-xl font-weight-bold mb-4">Pending</h2>
+      <div *ngFor="let task of getTasksByStatus('Pending')">
+        <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
+      </div>
+    </div>
+
+    <div class="col" appDropZone [zone]="2" (dropped)="onDrop($event)">
+      <h2 class="text-xl font-weight-bold mb-4">In Progress</h2>
+      <div *ngFor="let task of getTasksByStatus('In Progress')">
+        <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
+      </div>
+    </div>
+
+    <div class="col" appDropZone [zone]="3" (dropped)="onDrop($event)">
+      <h2 class="text-xl font-weight-bold mb-4">Completed</h2>
+      <div *ngFor="let task of getTasksByStatus('Completed')">
+        <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
+      </div>
+    </div>
+  </div>
+</div>
