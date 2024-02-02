@@ -8,6 +8,7 @@ import { KanbanBoardComponent } from './pages/kanban-board/kanban-board.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { DraggableDirective } from './directives/draggable.directive';
+import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DraggableDirective } from './directives/draggable.directive';
     AppComponent,
     TaskComponent,
     KanbanBoardComponent,
+    EditTaskComponent,
     DropZoneDirective,
     DraggableDirective
   ],

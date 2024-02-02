@@ -1,30 +1,36 @@
-
 <div class="container mt-4">
+  <div class="col-lg-12">
+    <div class="d-flex">
+
+      <input type="text" class="form-control mb-3" placeholder="Search anything here..." [(ngModel)]="searchText"
+        (input)="applyFilter()" /> <button class="btn btn-secondary" (click)="clearSearch()">clear</button>
+    </div>
+  </div>
   <div class="row">
     <div class="col" appDropZone [zone]="0" (dropped)="onDrop($event)">
-      <h2 class="text-xl font-weight-bold mb-4">Open</h2>
-      <div *ngFor="let task of getTasksByStatus('Open')">
+      <h1 class="title">Open</h1>
+      <div *ngFor="let task of filterTasksByStatus('Open')">
         <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
       </div>
     </div>
 
     <div class="col" appDropZone [zone]="1" (dropped)="onDrop($event)">
-      <h2 class="text-xl font-weight-bold mb-4">Pending</h2>
-      <div *ngFor="let task of getTasksByStatus('Pending')">
+      <h2 class="title">Pending</h2>
+      <div *ngFor="let task of filterTasksByStatus('Pending')">
         <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
       </div>
     </div>
 
     <div class="col" appDropZone [zone]="2" (dropped)="onDrop($event)">
-      <h2 class="text-xl font-weight-bold mb-4">In Progress</h2>
-      <div *ngFor="let task of getTasksByStatus('In Progress')">
+      <h2 class="title">In Progress</h2>
+      <div *ngFor="let task of filterTasksByStatus('In Progress')">
         <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
       </div>
     </div>
 
     <div class="col" appDropZone [zone]="3" (dropped)="onDrop($event)">
-      <h2 class="text-xl font-weight-bold mb-4">Completed</h2>
-      <div *ngFor="let task of getTasksByStatus('Completed')">
+      <h2 class="title">Completed</h2>
+      <div *ngFor="let task of filterTasksByStatus('Completed')">
         <app-task [task]="task" (update)="updateTask($event)" (delete)="deleteTask($event)"></app-task>
       </div>
     </div>

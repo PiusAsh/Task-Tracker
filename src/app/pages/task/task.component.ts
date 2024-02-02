@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Task } from 'src/app/models/task.model';
 
 @Component({
@@ -12,15 +13,34 @@ export class TaskComponent implements OnInit {
   @Output() updateTask: EventEmitter<Task> = new EventEmitter<Task>();
   @Output() deleteTask: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit() {}
 
+
+  onEditTask(id: any): void {
+    this.route.navigate(['/edit-task', id]);
+  }
   onUpdateTask(): void {
     this.updateTask.emit(this.task);
   }
 
   onDeleteTask(): void {
     this.deleteTask.emit(this.task.id);
+  }
+
+  getStatusClass(status: string): string {
+    switch (status) {
+      case 'Open':
+        return 'open';
+      case 'Pending':
+        return 'pending';
+      case 'In Progress':
+        return 'in-progress';
+      case 'Completed':
+        return 'completed';
+      default:
+        return '';
+    }
   }
 }

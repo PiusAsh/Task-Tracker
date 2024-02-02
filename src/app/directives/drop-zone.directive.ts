@@ -12,19 +12,19 @@ export class DropZoneDirective {
   @HostListener('dragover', ['$event']) onDragOver(event: DragEvent): void {
     event.preventDefault();
     event.stopPropagation();
-    this.el.nativeElement.classList.add('bg-primary');
+    this.el.nativeElement.classList.add('bg-light');
   }
 
   @HostListener('dragleave', ['$event']) onDragLeave(event: DragEvent): void {
     event.preventDefault();
     event.stopPropagation();
-    this.el.nativeElement.classList.remove('bg-primary');
+    this.el.nativeElement.classList.remove('bg-light');
   }
 
   @HostListener('drop', ['$event']) onDrop(event: DragEvent): void {
     event.preventDefault();
     event.stopPropagation();
-    this.el.nativeElement.classList.remove('bg-primary');
+    this.el.nativeElement.classList.remove('bg-light');
 
     const data = JSON.parse(event.dataTransfer?.getData('text/plain') || '');
     this.dropped.emit({ taskId: data.id, newStatus: this.getStatusByZone(this.zone) });

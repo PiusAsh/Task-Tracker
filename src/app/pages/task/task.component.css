@@ -1,0 +1,15 @@
+.open {
+    background-color: #ffcccb; 
+  }
+  
+  .pending {
+    background-color: #ffe082;
+  }
+  
+  .in-progress {
+    background-color: #b2dfdb; 
+  }
+  
+  .completed {
+    background-color: #d1c4e9; 
+  }

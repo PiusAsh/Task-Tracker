@@ -1,0 +1,22 @@
+
+<section style="display: flex; justify-content: center; height: 100vh; align-items: center;">
+
+  <div >
+    <h2>Edit Task</h2>
+    <form style="width: 400px;" [formGroup]="taskForm" (ngSubmit)="onUpdateTask()">
+      <label>Title:</label>
+      <input class="form-control" formControlName="title" placeholder="Title" />
+      <label>Description:</label>
+      <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
+      <label>Due Date:</label>
+      <input class="form-control" type="date" formControlName="dueDate" />
+  
+      <div class="d-flex justify-content-center mt-4">
+
+        <button class="btn btn-secondary text-black" type="submit">Update Task</button> &nbsp; &nbsp; &nbsp; 
+        <button class="btn btn-danger text-black" (click)="onDeleteTask()">Delete Task</button>
+      </div>
+    </form>
+  </div>
+</section>
+
