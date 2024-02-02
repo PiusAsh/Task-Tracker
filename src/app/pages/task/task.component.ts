@@ -13,14 +13,14 @@ export class TaskComponent implements OnInit {
   @Output() updateTask: EventEmitter<Task> = new EventEmitter<Task>();
   @Output() deleteTask: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private route: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
-
-  onEditTask(id: any): void {
-    this.route.navigate(['/edit-task', id]);
+  onEditTask(id: number): void {
+    this.router.navigate(['/edit-task', id]);
   }
+
   onUpdateTask(): void {
     this.updateTask.emit(this.task);
   }

@@ -1,0 +1,148 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design Homepage",
+      "description": "Create a modern and visually appealing homepage design",
+      "dueDate": "2022-12-31",
+      "status": "Open",
+      "userId": 1
+    },
+    {
+      "id": "2",
+      "title": "Implement Navigation",
+      "description": "Build navigation bar with dropdown menus",
+      "dueDate": "2022-12-31",
+      "status": "Open",
+      "userId": 2
+    },
+    {
+      "id": "3",
+      "title": "Setup Database",
+      "description": "Configure the database for task management system",
+      "dueDate": "2022-12-31",
+      "status": "Open",
+      "userId": 1
+    },
+    {
+      "id": "4",
+      "title": "Wireframe Task Tracker",
+      "description": "Create wireframes for the task tracker application",
+      "dueDate": "2022-12-31",
+      "status": "Open",
+      "userId": 2
+    },
+    {
+      "id": "5",
+      "title": "Review Wireframes",
+      "description": "Gather feedback on the task tracker wireframes",
+      "dueDate": "2022-12-31",
+      "status": "Pending",
+      "userId": 1
+    },
+    {
+      "id": "6",
+      "title": "Backend Development",
+      "description": "Implement server-side logic for the task tracker",
+      "dueDate": "2022-12-31",
+      "status": "In Progress",
+      "userId": 2
+    },
+    {
+      "id": "7",
+      "title": "Frontend Styling",
+      "description": "Apply Tailwind CSS for a polished user interface",
+      "dueDate": "2022-12-31",
+      "status": "Pending",
+      "userId": 1
+    },
+    {
+      "id": "8",
+      "title": "Testing and Debugging",
+      "description": "Conduct thorough testing and debug any issues",
+      "dueDate": "2022-12-31",
+      "status": "Pending",
+      "userId": 2
+    },
+    {
+      "id": "9",
+      "title": "User Authentication - Urgent",
+      "description": "Implement user authentication for personalized task lists",
+      "dueDate": "2022-12-31",
+      "status": "In Progress",
+      "userId": 1
+    },
+    {
+      "id": "10",
+      "title": "Sorting and Filtering",
+      "description": "Add sorting and filtering options for tasks",
+      "dueDate": "2022-12-31",
+      "status": "In Progress",
+      "userId": 2
+    },
+    {
+      "id": "11",
+      "title": "Responsive Design",
+      "description": "Ensure the application works seamlessly on different devices",
+      "dueDate": "2022-12-31",
+      "status": "In Progress",
+      "userId": 1
+    },
+    {
+      "id": "12",
+      "title": "Implement Drag and Drop",
+      "description": "Enable users to easily manage tasks through drag and drop",
+      "dueDate": "2022-12-31",
+      "status": "In Progress",
+      "userId": 2
+    },
+    {
+      "id": "13",
+      "title": "User Feedback",
+      "description": "Collect feedback from users and make necessary improvements",
+      "dueDate": "2022-12-31",
+      "status": "Completed",
+      "userId": 1
+    },
+    {
+      "id": "14",
+      "title": "Optimize Performance",
+      "description": "Optimize the application for better performance",
+      "dueDate": "2022-12-31",
+      "status": "Completed",
+      "userId": 2
+    },
+    {
+      "id": "15",
+      "title": "Documentation",
+      "description": "Create comprehensive documentation for the task tracker",
+      "dueDate": "2022-12-31",
+      "status": "Completed",
+      "userId": 1
+    },
+    {
+      "id": "16",
+      "title": "Deployment",
+      "description": "Prepare and deploy the task tracker application for public use",
+      "dueDate": "2022-12-31",
+      "status": "Completed",
+      "userId": 2
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "user1",
+      "password": "password1",
+      "isAdmin": false,
+      "phoneNumber": "123-456-7890"
+    },
+    {
+      "id": "2",
+      "username": "user2",
+      "password": "password2",
+      "isAdmin": true,
+      "phoneNumber": "987-654-3210"
+    }
+  ]
+}

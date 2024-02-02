@@ -11,35 +11,62 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class EditTaskComponent implements OnInit {
 
- 
-  task!: any;
+  task!: Task;
   taskForm!: FormGroup;
-  constructor(private route: ActivatedRoute, private taskService: TaskService, private router: Router, private formBuilder: FormBuilder) {}
+
+  constructor(
+    private route: ActivatedRoute,
+    private taskService: TaskService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     const taskId = +this.route.snapshot.paramMap.get('id')!;
-    this.task = this.taskService.getTaskById(taskId); 
+  
+    this.taskService.getTaskById(taskId).subscribe(
+      (task) => {
+        this.task = task;
+        this.taskForm.patchValue({
+          title: task.title,
+          description: task.description,
+          dueDate: task.dueDate,
+        });
+      },
+      (error) => {
+        console.error('Error fetching task:', error);
+      }
+    );
 
     this.taskForm = this.formBuilder.group({
-      title: [this.task.title],
-      description: [this.task.description],
-      dueDate: [this.task.dueDate],
+      title: [''],
+      description: [''],
+      dueDate: [''],
     });
-  }
-
-  onUpdateTask1(): void {
-    this.taskService.updateTask(this.task);
-    this.router.navigate(['/edit-task', this.task.id]);
   }
 
   onUpdateTask(): void {
     const updatedTask: Task = { ...this.task, ...this.taskForm.value };
-    this.taskService.updateTask(updatedTask);
-    this.router.navigate(['/task']);
+    this.taskService.updateTask(updatedTask).subscribe(
+      () => {
+        alert('Task Updated Successfully');
+        this.router.navigate(['']);
+      },
+      (error) => {
+        console.error('Error updating task:', error);
+      }
+    );
   }
+
   onDeleteTask(): void {
-    this.taskService.deleteTask(this.task.id);
-    alert('Tasked Deleted Successfully');
-    this.router.navigate(['/task']);
+    this.taskService.deleteTask(this.task.id).subscribe(
+      () => {
+        alert('Task Deleted Successfully');
+        this.router.navigate(['/task']);
+      },
+      (error) => {
+        console.error('Error deleting task:', error);
+      }
+    );
   }
 }

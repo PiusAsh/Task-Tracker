@@ -6,7 +6,6 @@ import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
 const routes: Routes = [
   { path: '', component: KanbanBoardComponent },
-  { path: 'task', component: TaskComponent },
   { path: 'edit-task/:id', component: EditTaskComponent }
 ];
 

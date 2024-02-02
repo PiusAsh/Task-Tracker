@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { DraggableDirective } from './directives/draggable.directive';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { EditTaskComponent } from './pages/edit-task/edit-task.component';
     DragDropModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
    
   ],
   providers: [],

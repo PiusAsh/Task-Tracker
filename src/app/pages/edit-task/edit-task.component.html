@@ -9,7 +9,8 @@
       <label>Description:</label>
       <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
       <label>Due Date:</label>
-      <input class="form-control" type="date" formControlName="dueDate" />
+      <p>{{this.task.dueDate |date: 'medium'}}</p>
+      <!-- <input class="form-control" type="date" formControlName="dueDate" /> -->
   
       <div class="d-flex justify-content-center mt-4">
 
