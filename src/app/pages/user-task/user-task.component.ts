@@ -2,34 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task.model';
 import { applyGlobalSearch } from 'src/app/helpers/table-search';
+import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-kanban-board',
-  templateUrl: './kanban-board.component.html',
-  styleUrls: ['./kanban-board.component.css'],
+  selector: 'app-user-task',
+  templateUrl: './user-task.component.html',
+  styleUrls: ['./user-task.component.css']
 })
-export class KanbanBoardComponent implements OnInit {
+export class UserTaskComponent implements OnInit {
+
   searchText: string = '';
   filteredRows!: Task[];
   tasks!: Task[];
-
-  constructor(private taskService: TaskService, private router: Router) {}
-
+  userName: any;
+  constructor(private taskService: TaskService, private userService: UserService, private router: Router) {}
   ngOnInit(): void {
     this.fetchTasks();
   }
 
   fetchTasks(): void {
-    this.taskService.getTasks().subscribe((tasks) => {
-      this.tasks = tasks;
-      this.filteredRows = tasks;
-    });
+    const currentUser = this.userService.getCurrentUser();
+
+    this.userName = currentUser?.username;
+
+    if (currentUser) {
+      this.taskService.getTasksByUserId(currentUser.id).subscribe((tasks) => {
+        this.tasks = tasks;
+        this.filteredRows = tasks;
+      });
+    }
   }
-login(){
-  this.router.navigate(['/login']);
-}
+ 
+
   updateTask(updatedTask: any): void {
     this.taskService.updateTask(updatedTask).subscribe(() => {
       this.fetchTasks();
@@ -53,7 +58,10 @@ login(){
       });
     }
   }
-
+logout(){
+  this.userService.clearCurrentUser();
+  this.router.navigate(['']);
+}
   applyFilter(): void {
     this.filteredRows = applyGlobalSearch(
       this.tasks,

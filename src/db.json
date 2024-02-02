@@ -66,7 +66,7 @@
     },
     {
       "id": "9",
-      "title": "User Authentication - Urgent",
+      "title": "User Authentication - Urgents",
       "description": "Implement user authentication for personalized task lists",
       "dueDate": "2022-12-31",
       "status": "In Progress",
@@ -93,7 +93,7 @@
       "title": "Implement Drag and Drop",
       "description": "Enable users to easily manage tasks through drag and drop",
       "dueDate": "2022-12-31",
-      "status": "In Progress",
+      "status": "Pending",
       "userId": 2
     },
     {

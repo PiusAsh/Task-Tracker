@@ -1,12 +1,11 @@
 <div class="container mt-4">
-  <div class="d-flex justify-content-between mb-5">
+<div class="d-flex justify-content-between mb-5">
 
-    <p class="name">General View Mode</p>
-    <button class="btn btn-primary" (click)="login()">Login</button>
-  </div>
+  <p class="name">Welcome, {{userName}}</p>
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
   <div class="col-lg-12">
     <div class="d-flex">
-
       <input type="text" class="form-control mb-3" placeholder="Search anything here..." [(ngModel)]="searchText"
         (input)="applyFilter()" /> <button class="btn btn-secondary" (click)="clearSearch()">clear</button>
     </div>
@@ -41,3 +40,5 @@
     </div>
   </div>
 </div>
+
+

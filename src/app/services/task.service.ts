@@ -33,4 +33,8 @@ export class TaskService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Task>(url);
   }
+  getTasksByUserId(userId: number): Observable<Task[]> {
+    const userTasksUrl = `${this.apiUrl}?userId=${userId}`;
+    return this.http.get<Task[]>(userTasksUrl);
+  }
 }

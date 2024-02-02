@@ -10,6 +10,8 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
 import { DraggableDirective } from './directives/draggable.directive';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserTaskComponent } from './pages/user-task/user-task.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     KanbanBoardComponent,
     EditTaskComponent,
     DropZoneDirective,
-    DraggableDirective
+    DraggableDirective,
+    UserTaskComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
